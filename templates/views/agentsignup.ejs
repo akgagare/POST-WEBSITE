@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agentsignup</title>
+    <style>
+        .box{
+            border: solid red 2px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+            background-color: whitesmoke;
+            width: 700px;
+            height: 550px;
+            margin-left: 350px;
+            
+        }
+        body{
+            background-image: url(/postimage.jpg);
+            transition: all;
+            background-color: mintcream;
+        }
+        #sub{
+            margin-left: 50px;  text-align: center;border-radius: 10px; background-color: yellow; height: 30px; width: 100px; color: red;font-weight: 30px; font-size: 20px;
+            margin: 20px; width: 70%;
+        }
+        #sub:hover{
+            background-color: orangered;
+            color:white;
+        }
+        .box-names{
+            margin: top 2px; 
+            width: 300px;
+            border-radius:4px;
+        }
+    </style>
+</head>
+<body background="postimage.jpg">
+    <header>
+    <h2 style="text-align: center;">New Agent Registeration</h2><hr>
+    </header>
+        <div class="box">
+        <form action="/agentsignup" method="post">
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input type="text" class="names" placeholder=" Agent Name" name="agentname" style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Login Id:
+                    </td>
+                    <td>
+                        <input type="text" class="names" placeholder="User name" name="username"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td>
+                        Create Password:
+                    </td>
+                    <td>
+                        <input type="password" class="names" placeholder="Password" name="password"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Confirm Password:
+                    </td>
+                    <td>
+                        <input type="password" class="names" placeholder="Password" name="aconfirmpassword"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Registeration Id:
+                    </td>
+                    <td>
+                        <input type="password" class="names" placeholder="Password" name="reg_id"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender:
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" value="Male">Male
+                        <input type="radio" name="gender" value="Female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mail:
+                    </td>
+                    <td>
+                        <input type="email" class="names" placeholder="mail" name="email"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Contact:
+                    </td>
+                    <td>
+                        <input type="number" class="names" placeholder="97****" name="contact"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    Address:
+                    </td>
+                    <td>
+                        <input type="text" class ="names" placeholder="address" name="aaddress"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        PinCode:
+                    </td>
+                    <td>
+                        <input type="number" class="names" placeholder="Pincode" name="apincode"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Post Location :
+                    </td>
+                    <td>
+                        <input type="text"  class="names" placeholder="post location" name="post_location"  style="border-radius: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SERVICE EXPERIENCE:
+                    </td>
+                    <td>
+                        <input type="radio" name="service" value="5 Years">5yrs
+                        <input type="radio" name="service" value="More than 5 years">more than 5 yrs
+                        <input type="radio" name="service" value="10 Years">10 yrs
+                        <input type="radio" name="service" value="More than 10 years">more than 10 yrs
+        
+                    </td>
+        
+                </tr>
+                <tr>
+                    <td>
+                        SCHEMES DELIVERED:
+                    </td>
+                    <td>
+                        <input type="checkbox" name="schemes_delivered" value="RD">RD
+                        <input type="checkbox" name="schemes_delivered" value="MIS">MIS
+                        <input type="checkbox" name="schemes_delivered" value="1 year TD">1 Year TD
+                        <input type="checkbox" name="schemes_delivered" value="2 Year TD">2 Year TD
+                        <input type="checkbox" name="schemes_delivered" value="5 Year TD">5Year TD
+                        <input type="checkbox" name="schemes_delivered" value="KVP">KVP
+                        <input type="checkbox" name="schemes_delivered" value="Senior Citizen">SENIOR CITIIZEN
+                    </td>
+        
+                </tr>    
+                <tr>
+                    <td><input type="submit" id="sub" value="Submit" style="width: 300px; margin-left: 50px;" ></td>
+                </tr>
+        
+            </table>
+        </form> 
+ 
+    <hr>
+    
+        <b>Signup with Social Media: </b><br>
+        <a 
+        href="https://www.instagram.com" target="_main">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkG 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" 
+            aLt="instagram profile" 
+            height="50">
+        </a>
+        <a 
+        href="https://twitter.com/login" target="_main">
+        <img src="data:image/png;base64,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"
+        alt="Twitter profile"
+        height="50">
+        </a>
+        <a
+        href="https://www.facebook.com/" target="_main">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL0AAAB2CAMAAACqJmJ1AAAAaVBMVEX///8Yd/IAcPGOrvedufgAbfEPdfLt8/5Ni/OsxfkAavEAaPEAcvI0f/L5+/8qePLO3fvU4fwAZPHl7f2/0vrg6f06g/Py9v7K1/tChvNbkfR7ovUAYfGgvviDqfZqnPW0y/mQs/dolvSw9DJ3AAAE2klEQVR4nO2c2ZaiMBCGJZqAEBDCooAK+v4POdqzaAMpCuxKmHP4bz3iJ1RqS4XNZtWqVatWrZqvyM2T+PRUnOTp0TbOBB2zW1OVoWB+EAQ+E4eyam7Z//AP8qxmZ59JIZyXhHj8E8XrLLeNB6ptQp85OrEgvLe2EXVKrsqXWvQ/T4GrOo5sk/YVN1J/19/F2f1kG7aj2FNiHPzvA1BFZhv4TW7NxkzmuyRvXNvQfxRd1DT2L/7zbhEuNK34ZPanuLcA/3kJ8Ab/XSLY2Ya/zrvxv/F5bdV5psUH8A/x0KL15CXOxevF7OEno6F1XELFduDzw9z1+g3fSWzAJ7OdTQffxt1Pw5+Bf+Cbt3338LnN/5WUqWH6ZoKrfNQm/FlmBT7nz7pFdJ8au5uF3+LhmV/cr5csTuI4ay/b+l4VThffv5qEjwPsbWeqyTp2cUzjnrcKDKbM7gEJL8V1MJPsf1+YW7lXZIjl4bAzjPr0rDEFfzrj4FmtucAAvaNaM/BHD+fp/UaXQQ7Ri9JMtbLD+Rupd4ND9A6/GaFHGr3QV66D9A43cfORrt4HfOAwvXaZ/KDcEAUvPaBsGqZ3DOQ7F6TVt8A1NPQGLB+ZWh6gilVDLyQ1fIbLEUZsWBOr/T0xfYNLjIfzluiRqT110lRloqKFz3Fr1vH77jLdyXPwW77mW+JAWyW2uDUrip7vTgp/fMVwWtNBGo7sJQk5qk8rPVJ6jvM4/UXb4CK0ooTHViVs2/li3qsGhwVF6I+FTND69C2yhmeUJWKF7IL06LF/WxAaPjazH6DHJqYFXXMkwdaz8+kdusZahu1AzaZ3ON2y3euC5A/S08Ur7Nr7gJ7RZcnYTsgn9HSdEWTA/IRe0qWZFf2qFSUZvQfSi5d4P1qJdwEXCenowWBVef9Udndi96X3JqBIsEUfRu5L3fT+6L4LWP2U9JDl4H82uuuvQ0gPrlr8z7qF/hkSrlqwssLTp0DQA7qfnwqMVnj6ROmvQtgOBDMFPH0LpEu9SPFzArM0PP0NeISEWRqYIePpIddFmCGD1QmeHrgKZXVyLIFwhaaHdhxFSThtB1XlaPoEyHMoq3LQ6aDpoe4IocuBPTWa/gK4HNo9c6ATiKaHYh5pJxDIFcSh3b/UnTSO3z4DMlXCyuqpDDB8/pLqNvRu6vUhsPKJO+DI3YeZlSH17gOygT+TnthwHqYDeJ2P6YOWmB634zmPnn7HE7fbPI/ewG6zW5DRhwZGAzFTFrPoTUxZbDYIw59Fb2TCBWP5c+gNTRdF4/s/M+hNTXYhpupm0CtjE5mjffzp9GaW7JdGp0mn0x8MDlInIxMTk+kDo4f3brDfmUpvdop6s6lB/In0pifYN24IpcrT6CUwukmktJjSGoDohYn8pqscWLlT6IWycugn16f6E+gtnViCTovh6UVgCf5h+7qTemh6Vlg8aJiWw44TS2/1lORGF7Zw9IIbDlJ97YdcD4peBhcrxN/kDpzMxtBzz4Kb7yvaqy7bOL1Uu6W8FOJ47bwJYoxesnopbyR4Kq7OUiDphVCepSPBWiW14Ch6Ju/WAhSgZPvvLShaeumr6xLZv5Q1BWdCR8/88L6kF4j0lWZbcfaDHn3gn+W1e9pzkYriW3cPpL2dluIgJ+g/RF61atWqVcvTL/CsRmonSVFoAAAAAElFTkSuQmCC"
+        alt="Facebook Profile"
+        height="50">
+        </a>
+    </div>
+</body>
+</html>

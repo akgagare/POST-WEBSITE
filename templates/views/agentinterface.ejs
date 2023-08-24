@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://kit.fontawesome.com/eb58100bd2.js" crossorigin="anonymous"></script>
+    <title>customerlist</title>
+    
+    <style>
+        table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+    #box{
+        border: solid red 2px;
+        border-radius: 4px;
+        height: 150px;
+        width: 500px;
+        padding: 10px;
+        background-color: #e8f809;
+        margin-left: 400px;
+        text-align: center;
+        
+    }
+    body{
+      background-color: #cc0001;
+    }
+    
+	tr { border: 1px solid #ccc; 
+        background-color: white;
+    }
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+    .names{
+        margin: 20px;
+        margin-top: 20px;
+    }
+    
+   
+
+}
+body {
+	background: linear-gradient(-45deg, white, red,white,red );
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    </style>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <input class="checkbox" type="checkbox" id="toggler" />
+  <aside class="aside-wrapper">
+    <h1 class="logo-text"><span>MENU</span> <label for="toggler"><i class="fas fa-bars sidebar-toggle"></i></label></h1>
+    
+    <ul>
+      <li><a type="checkbox" id="checkbox" onclick="proclick()">Profile</a></li>
+      <!-- <li><a  type="checkbox" id="checkbox" onclick="formclick()">AGENT FORM</a></li>  -->
+      <li><a onclick="calculator()"> Premium Calculator</a></li>
+      <li><a id="checkbox" > Customer's List</a></li>
+      <!-- <li><a id="checkbox" href="/login/agentprofile//agentinterface/fallupcustomers">Fall up Customers </a></li> -->
+      <li><a  type="checkbox" id="checkbox" onclick="logoutclick()">Logout</a></li>
+      <!-- <li><i class="fa-solid fa-user-secret"></i>Agent</li> -->
+    </ul>
+  </aside>
+    <h1 id="heading" style="text-align: center;"><b>Customers List</b></h1>
+    <div  id="box">
+      
+    <form href="/login/agentprofile/:id/agentinterface" method="POST">
+        <label>Name of Customer</label>
+        <input type="text" name="name" id="name" class="names"></input><br>
+        <label>Scheme Invested In</label>
+        <input type="text" name="schemes" id="schemes" class="names"></input> <br>
+        <label>Opening date</label>
+        <input type="date" name="opening" id="opening" class="names"></input> <br>
+        <label>Maturitydate</label>
+        <input type="date" name="mature" id="mature" class="names"></input> <br>
+        <label>Amount Invested</label>
+        <input type="number" name="amount" id="amount" class="names"></input> <br>
+        <label>maturity_amount</label>
+        <input type="number" name="maturity_amount" id="maturity_amount" class="names"></input> <br>
+        <input type ="submit" value="Submit">
+        
+    </form>
+    
+</div>
+    <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Schemes</th>
+            <th>Opening</th>
+            <th>Mature</th>
+            <th>Amount</th>
+            <th>Maturity Amount</th>
+            <th>Complete/Break</th>
+          </tr>
+          <%x.forEach(y=>{%>
+            <tr>
+                <td><%=y.User%></td>
+                <td><%=y.Scheme_name%></td>
+                <td><%=y.opening_date%></td>
+                <td><%=y.closing_date%></td>
+                <td><%=y.amount_invested%></td>
+                <td><%=y.maturity_amount%></td>
+                <td><a href="/login/agentprofile/<%=y._id%>/agentinterface/delete">break</a></td>
+              <!-- <a href="/login/agentprofile/<%=y.agent_id%>/agentinterface/delete">Delete</a></td> -->
+              <%})%>
+            </tr>
+        </thead>
+        <!-- <tbody>
+          <tr>
+            <td data-column="First Name">James</td>
+            <td data-column="Last Name">Matman</td>
+            <td data-column="Job Title">Chief Sandwich Eater</td>
+            <td data-column="Twitter">@james</td>
+          </tr>
+          <tr>
+            <td data-column="First Name">Andor</td>
+            <td data-column="Last Name">Nagy</td>
+            <td data-column="Job Title">Designer</td>
+            <td data-column="Twitter">@andornagy</td>
+          </tr>
+          <tr>
+            <td data-column="First Name">Tamas</td>
+            <td data-column="Last Name">Biro</td>
+            <td data-column="Job Title">Game Tester</td>
+            <td data-column="Twitter">@tamas</td>
+          </tr>
+          <tr>
+            <td data-column="First Name">Zoli</td>
+            <td data-column="Last Name">Mastah</td>
+            <td data-column="Job Title">Developer</td>
+            <td data-column="Twitter">@zoli</td>
+          </tr>
+          <tr>
+            <td data-column="First Name">Szabi</td>
+            <td data-column="Last Name">Nagy</td>
+            <td data-column="Job Title">Chief Sandwich Eater</td>
+            <td data-column="Twitter">@szabi</td>
+          </tr> -->
+        <!-- </tbody> -->
+        <tbody></tbody>
+
+      </table>
+      <script>
+        
+      function btnclick(){
+          window.location.assign("/agentinterface");
+      }
+      function logoutclick(){
+          window.location.assign("/");
+      }
+      function calculator(){
+      window.location.assign("/precalculator");
+  }
+  </script>
+  
+</body>
+</html>

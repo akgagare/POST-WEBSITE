@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>growth</title>
+    <style>
+        .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: clamp(2rem, 2.8vw, 5rem);
+  font-family: Raleway;
+  font-weight: bold;
+}
+
+.typewriter {
+	width: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 4px solid #212121;
+	animation: cursor 4s step-start infinite, 
+    text 5s steps(10) alternate infinite;
+    color:orange;
+    text-decoration: none;
+    text-shadow: 2px 2px #ff0000;
+  
+}
+#grow{
+  text-align:centre;
+
+}
+#box{
+    text-align: center;
+    border: 2px red;
+    height: 300px;
+}
+
+@keyframes cursor {
+	0%, 100% { 
+    border-color: #212121; 
+  }
+}
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width: 21.5ch; 
+  }
+}
+    </style>
+</head>
+<body>
+    <div id="box">
+    <p>HELLO!</p>
+    <div class="container">
+        <div class="typewriter">NAME</div>
+    </div>
+      <p>our growth is within your growth!!!</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://kit.fontawesome.com/eb58100bd2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <input class="checkbox" type="checkbox" id="toggler" />
+    <aside class="aside-wrapper">
+      <h1 class="logo-text"><span>MENU</span> <label for="toggler"><i class="fas fa-bars sidebar-toggle"></i></label></h1>
+   
+      <ul>
+        <!-- <li><a type="checkbox" id="checkbox" onclick="proclick()">Profile</a></li> -->
+        <!-- <li><a  type="checkbox" id="checkbox" onclick="formclick()">AGENT FORM</a></li> -->
+        <li><a onclick="calculator()"> Premium Calculator</a></li>
+        <!-- <li><a  type="checkbox" id="checkbox" onclick="btnclick()"> Agent's List</a></li> -->
+        <li><a type="checkbox" id="checkbox" onclick="schemes()">Schemes</a></li>
+        <li><a type="checkbox" id="checkbox">Contact agents</a></li>
+        <li><a  type="checkbox" id="checkbox" onclick="logoutclick()">Logout</a></li>
+        <!-- <li><i class="fa-solid fa-user-secret"></i>Agent</li> -->
+      </ul>
+    </aside>
+
+    <script>
+        function schemes(){
+        window.location.assign("/schemes");
+        }
+        function agentlist(){
+            window.location.assign("/agentlist");
+        }
+        function logoutclick(){
+            window.location.assign("/");
+        }
+        function calculator(){
+        window.location.assign("/precalculator");
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(/postimage.jpg);
+            transition: none;
+            
+        }
+        table { 
+	width: 750px; 
+	border-collapse: collapse; 
+    margin-top: 100px;
+    margin-left: 200px;
+    padding-left: 100px;
+    
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+        margin-top: 1000px;
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		/* white-space: nowrap; */
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}}
+	body {
+	background: linear-gradient(-45deg, white, red,white,red );
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    </style>
+</head>
+<body>
+	<%- include('../partials/navbar') %>
+    <h1 style="text-align: center;">PAST CUSTOMER LIST</h1>
+    <table style="padding-left: 70px;margin-left: 310px;">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Schemes</th>
+            <th>Contact No.</th>
+            <th>Status</th>
+            
+            <th>End date</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-column="First Name">Rahul</td>
+            <td data-column="Schemes">KVP</td>
+            <td data-column="Status">9498765462</td>
+            <td data-column="Status">Break</td>
+            
+            <td data-column="Date">2/2/2017</td>
+          </tr>
+          <tr>
+            <td data-column="First Name">Anish</td>
+            <td data-column="Schemes">RD</td>
+            <td data-column="Status">9753546783</td>
+            <td data-column="Status">Completed</td>
+            
+            <td data-column="Date">17/4/2018</td>
+          </tr>
+          <tr>
+            <td data-column="First Name">Prakash</td>
+            <td data-column="Schemes">RD</td>
+            <td data-column="Status">8688556567</td>
+            <td data-column="Status">Completed</td>
+            <td data-column="Date">15/6/2018</td>
+          </tr>
+          <tr>
+            <td data-column="First Name">Priyanka</td>
+            <td data-column="Schemes">1 yr TD</td>
+            <td data-column="Status">8686897673</td>
+            <td data-column="Status">Completed</td>
+            
+            <td data-column="Date">4/9/2019</td>
+          </tr>
+          <tr>
+            <td data-column="First Name">Ajit</td>
+            <td data-column="Schemes">NSC</td>
+            <td data-column="Status">8786567877</td>
+            <td data-column="Status">Completed</td>
+            
+            <td data-column="Date">2/2/2020</td>
+          </tr>
+        </tbody> 
+        
+
+      </table>
+    
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+    <style>
+    body{
+        background: "/postimage.jpg";
+    }
+        .heading{
+            padding-left: 20px;
+        }
+        th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+    th:hover{ 
+	background: yellow; 
+	color:black; 
+	font-weight: bold; 
+	}
+
+    td, th { 
+	    padding: 10px; 
+	    border: 1px solid #ccc; 
+	    text-align: left; 
+	    font-size: 18px;
+	}
+    td:hover,th:hover{
+        background-color: yellow;
+        color: red;
+        font-size: x-large;
+
+    }
+    table{
+        margin-left: 260px;
+        margin-top: 100px;
+        position: absolute;
+        background-color: white;
+    }
+    .st{
+        /* margin-left:250px;
+        margin-top:50px; */
+        margin-block-end: -60px;
+        text-align: center;
+    }
+    body {
+	background: linear-gradient(-45deg, white, red,white,red );
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    </style>
+</head>
+<body background="/postimage.jpg">
+    <%- include('../partials/navbar') %>
+    <%- include('../partials/cmenu') %>
+
+    
+
+    <h1 class="st">The agents in your area are:</h1>
+    <table>
+        <thead>
+          <tr>
+            <th class="heading">Agent Name</th>
+            <th class="heading">Gender</th>
+            <th class="heading">Email id</th>
+            <th class="heading">Contact No.</th>
+            <th class="heading">Address</th>
+            <th class="heading">Pincode</th>
+            <th class="heading">Post location</th>
+            <th class="heading">Service</th>
+            <th class="heading">Schemes delivered</th>
+          </tr>
+          <%agent.forEach(agentdata=>{%>
+            <tr>
+                <td><%=agentdata.agentname%></td>
+                <td><%=agentdata.gender%></td>
+                <td><%=agentdata.email%></td>
+                <td><%=agentdata.contact%></td>
+                <td><%=agentdata.aaddress%></td>
+                <td><%=agentdata.apincode%></td>
+                <td><%=agentdata.post_location%></td>
+                <td><%=agentdata.service%></td>
+                <td><%=agentdata.schemes_delivered%></td>
+
+            </tr>
+            <%})%>
+        </thead>
+        <tbody></tbody>
+
+      </table>
+
+      
+</body>
+</html>

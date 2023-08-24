@@ -1,0 +1,72 @@
+[
+    {
+        "id":1,
+        "scheme":"Reccuring Deposit(RD)",
+        "Interest":"5.8%",
+        "Period":"5 Year",
+        "Installment":"Monthly"
+    },
+    {
+        "id":2,
+        "scheme":"National Saving Certificate(NSC)",
+        "Interest":"7.0%",
+        "Period":"5 Year",
+        "Installment":"One Time"
+    },
+    {
+        "id":3,
+        "scheme":"1 Year Time Deposit(TD)",
+        "Interest":"6.6%",
+        "Period":"1 Year",
+        "Installment":"One Time"
+    },
+    {
+        "id":4,
+        "scheme":"2 Year Time Deposit(TD)",
+        "Interest":"6.8%",
+        "Period":"2 Year",
+        "Installment":"One Time"
+    },
+    {
+        "id":5,
+        "scheme":"3 Year Time Deposit(TD)",
+        "Interest":"6.9%",
+        "Period":"3 Year",
+        "Installment":"One Time"
+    },
+    {
+        "id":6,
+        "scheme":"3 Year Time Deposit(TD)",
+        "Interest":"6.9%",
+        "Period":"3 Year",
+        "Installment":"One Time"
+    },
+    {
+        "id":7,
+        "scheme":"5 Year Time Deposit(TD)",
+        "Interest":"7.0%",
+        "Period":"5 Year",
+        "Installment":"One Time"
+    },
+    {
+        "id":8,
+        "scheme":"Monthly Income Scheme(MIS)",
+        "Interest":"7.1%",
+        "Period":"5 Year",
+        "Installment":"Monthly"
+    },
+    {
+        "id":9,
+        "scheme":"Kisan Vikas Patra(KVP)",
+        "Interest":"7.2%",
+        "Period":"10 Year",
+        "Installment":"One Time"
+    },
+    {
+        "id":10,
+        "scheme":"Sukayank Yojana",
+        "Interest":"8.0%",
+        "Period":"18 Years",
+        "Installment":"Yearly Till 18 Years Girl's age"
+    }
+]

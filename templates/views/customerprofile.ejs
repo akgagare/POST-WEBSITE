@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customerprofile</title>
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://kit.fontawesome.com/eb58100bd2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body background="https://1.bp.blogspot.com/-gDiCl7Zsw3k/Xx1zXdPPuuI/AAAAAAAAChU/-TxpAXjyIUASeXmRd2V9IbbJS3VXNesjQCLcBGAsYHQ/s1200/india-post-1591855847.jpg">
+    <style>  
+  .box{
+    margin-top: 20px;
+    padding-left: 800px;
+    background-color: whitesmoke;
+    height: 500px;
+    width: 500px;
+    border: 4px solid yellow;
+  }
+  #details{
+  display: block;
+  }
+  .predetails{
+    font-size: 15px;
+    font-weight: 5;
+    padding-right: 500px;
+    text-align: justify;
+  }
+  /* #image{
+    height: 200px;
+    width: 200px;
+    border:solid red 2px;
+    padding-right:500px ;
+    display: block;
+
+  } */
+  #heading{
+            /* font-weight: 20px; */
+            text-shadow: 2px 2px yellow;
+            text-align: center;
+            color: white;
+        }
+#fullform{
+    padding-left: 280px;
+}
+.checkbox{
+    display: none;
+  } 
+  #checkbox{
+    text-decoration: none;
+  }
+  a:link{
+    color:white;
+  }
+  a:visited{
+    color:white;
+  }
+  a:hover{
+    color:white;
+  }
+  a:active{
+    color:white;
+  }
+  .profile,p{
+      font-size: 20px;
+      padding: 15px;
+    
+    }
+    body {
+	background: linear-gradient(-45deg, white, red,white,red );
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    </style>
+    <%- include('../partials/navbar') %>
+    <input class="checkbox" type="checkbox" id="toggler" />
+    <aside class="aside-wrapper">
+      <h1 class="logo-text"><span>MENU</span> <label for="toggler"><i class="fas fa-bars sidebar-toggle"></i></label></h1>
+      <%cust.forEach(cdata => {%>
+      <ul>
+        <!-- <li><a type="checkbox" id="checkbox" onclick="proclick()">Profile</a></li> -->
+        <!-- <li><a  type="checkbox" id="checkbox" onclick="formclick()">AGENT FORM</a></li> -->
+        <li><a onclick="calculator()"> Premium Calculator</a></li>
+        <!-- <li><a  type="checkbox" id="checkbox" onclick="btnclick()"> Agent's List</a></li> -->
+        <li><a type="checkbox" id="checkbox" onclick="schemes()">Schemes</a></li>
+        <li><a id="checkbox" href="/customerlogin/customerprofile/<%=cdata._id%>/agentlist">Contact agents</a></li>
+        <li><a  type="checkbox" id="checkbox" onclick="logoutclick()">Logout</a></li>
+        <!-- <li><i class="fa-solid fa-user-secret"></i>Agent</li> -->
+      </ul>
+    </aside>
+    <!-- <h1 id="heading"><b >CUSTOMER INTERFACE</b></h1> -->
+   
+    <div class="box">
+        <span id="details">
+        <h2 >MY PROFILE</h2>
+        
+        <span id="image" ><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" style="height: 50px;width: 50px;"></span>
+        
+        </span> 
+    
+        <span class="profile">
+          
+                <p>Name: <%=cdata.name%></p>
+                <p>Gender: <%=cdata.gender%></p>
+                <p>Age: <%=cdata.age%></p>
+                <p>Gamil id: <%=cdata.email%></p>
+                <p>Contact No: <%=cdata.contact%></p>
+                <p>Address: <%=cdata.address %>,  <%=cdata.cpincode%></p>
+            <%})%>
+        </span>
+        
+    </div>
+    <script>
+      function schemes(){
+      window.location.assign("/schemes");
+      } 
+      function logoutclick(){
+          window.location.assign("/");
+      }
+      function calculator(){
+      window.location.assign("/precalculator");
+  }
+  </script>
+</body>
+</html>
